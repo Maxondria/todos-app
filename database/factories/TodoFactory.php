@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Todo::class, function (Faker $faker) {
     return [
-        'name' => $faker->firstName('male'),
+        'name' => $faker->sentence(3),
         'description' => $faker->paragraph(4),
         'completed' => false,
     ];
