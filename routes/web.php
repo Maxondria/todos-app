@@ -28,3 +28,5 @@ Route::get('/todos/{todo}/edit', 'TodosController@edit');
 Route::get('/todos/{todo}/delete', 'TodosController@destroy');
 
 Route::post('/todos/{todo}/update-todo', 'TodosController@update');
+
+Route::get('/todos/{todo}/complete', 'TodosController@complete');
