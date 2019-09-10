@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Todo;
+
 class TodosSeeder extends Seeder
 {
     /**
@@ -11,6 +13,6 @@ class TodosSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Todo::class, 5)->create();
+        factory(Todo::class, 5)->create();
     }
 }

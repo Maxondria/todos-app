@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center my-5">Create a Todo</h1>
+    <h1 class="text-center my-5">Edit Todo</h1>
     <div class="row justify-content-center">
         <div class="col md-8">
             <div class="card card-default">
@@ -22,15 +22,16 @@
                         </div>
                     @endif
 
-                    <form action="/store-todo" method="post">
+                    <form action="/todos/{{$todo->id}}/update-todo" method="post">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Name">
+                            <input type="text" class="form-control" name="name" placeholder="Name"
+                                   value="{{$todo->name}}">
                         </div>
 
                         <div class="form-group">
                             <textarea name="description" placeholder="Description" cols="5" rows="5"
-                                      class="form-control"></textarea>
+                                      class="form-control">{{$todo->description}}</textarea>
                         </div>
 
                         <div class="form-group text-center">
