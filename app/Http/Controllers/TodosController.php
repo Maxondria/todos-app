@@ -33,6 +33,8 @@ class TodosController extends Controller
         $todo->completed = false;
 
         $todo->save();
+
+        session()->flash('success', 'Todo Created Successfully');
         return redirect('/todos');
     }
 
@@ -59,12 +61,14 @@ class TodosController extends Controller
         $todo->description = $data['description'];
 
         $todo->save();
+        session()->flash('success', 'Todo Updated Successfully');
         return redirect('/todos');
     }
 
     public function destroy(Todo $todo)
     {
         $todo->delete();
+        session()->flash('success', 'Todo Deleted Successfully');
         return redirect('/todos');
     }
 }
